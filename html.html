@@ -1,0 +1,81 @@
+<script>
+    
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+  
+    script.addEventListener("load", function (event) {
+      const meeting = new VideoSDKMeeting();
+    
+      const config = {
+        name: "Erryle",
+        apiKey: "7eb89a4e-4161-4c53-b367-48bdcf61edae", 
+        meetingId: "EDTECH_DEMO", 
+  
+        
+        
+  
+        micEnabled: true,
+        webcamEnabled: true,
+        participantCanToggleSelfWebcam: true,
+        participantCanToggleSelfMic: true,
+        
+
+        screenShareEnabled: true,
+
+        chatEnabled: true,
+        theme: "DARK",
+  // ...
+  whiteboardEnabled: true,
+  permissions: {
+    // ...
+    drawOnWhiteboard: true,
+    toggleWhiteboard: true,
+  },
+  permissions: {
+    //other permissions
+    changeLayout: true,
+    askToJoin: false,
+    toggleParticipantWebcam: false,
+    toggleParticipantMic: false,
+    toggleParticipantScreenshare: false,
+  },
+  layout: {
+    type: "SIDEBAR", // "SPOTLIGHT" | "SIDEBAR" | "GRID"
+    priority: "PIN", // "SPEAKER" | "PIN",
+    gridSize: 3,
+  },
+  
+  leftScreen: {
+    actionButton: {
+      label: "Leave",
+      href: "http://127.0.0.1:5500/dashboard.html",
+    },
+    rejoinButtonEnabled: true,
+  },
+
+       
+
+        joinScreen: {
+          visible: true, // Show the join screen ?
+          title: "EdTech Quick start", // Meeting title
+          meetingUrl: window.location.href, // Meeting joining url
+          
+          
+        },
+        
+      };
+      
+      
+      meeting.init(config);
+      
+    });
+    
+
+          
+  
+    script.src = "https://sdk.videosdk.live/rtc-js-prebuilt/0.3.23/rtc-js-prebuilt.js";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  
+  </script>
+  
+        
